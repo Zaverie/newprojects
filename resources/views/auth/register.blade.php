@@ -1,4 +1,4 @@
-@extends('layouts.guest', [ 'title' => 'register', 'activeLink' => 'register'])
+@extends('layouts.guest', ['title' => 'register', 'activeLink' => 'register'])
 
 {{-- @section('content')
 <div class="container">
@@ -77,82 +77,86 @@
 @endsection --}}
 
 @section('content')
-<form method="POST" action="{{ route('register') }}">
-    @csrf
-              <div class="card card-login card-hidden">
-                <div class="card-header card-header-rose text-center">
-                  <h4 class="card-title">{{ __('Register') }}</h4>
-                </div>
-                <div class="card-body ">
-                  <p class="card-description text-center">Register</p>
-                  <span class="bmd-form-group">
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="card card-login card-hidden">
+            <div class="card-header card-header-rose text-center">
+                <h4 class="card-title">{{ __('Register') }}</h4>
+            </div>
+            <div class="card-body ">
+                <p class="card-description text-center">Register</p>
+                <span class="bmd-form-group">
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">face</i>
-                        </span>
-                      </div>
-                      <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="First Name...">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">face</i>
+                            </span>
+                        </div>
+                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror"
+                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
+                            placeholder="First Name...">
 
-                      @error('name')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                  </span>
-                  <span class="bmd-form-group">
+                </span>
+                <span class="bmd-form-group">
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">email</i>
-                        </span>
-                      </div>
-                      <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email...">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">email</i>
+                            </span>
+                        </div>
+                        <input type="email" id="email" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email...">
 
-                      @error('email')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                  </span>
-                  <span class="bmd-form-group">
+                </span>
+                <span class="bmd-form-group">
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">lock_outline</i>
-                        </span>
-                      </div>
-                          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password...">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">lock_outline</i>
+                            </span>
+                        </div>
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                            name="password" required autocomplete="new-password" placeholder="Password...">
 
-                          @error('password')
-                              <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message }}</strong>
-                              </span>
-                          @enderror
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
-                  </span>
+                </span>
 
-                  <span class="bmd-form-group">
+                <span class="bmd-form-group">
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">lock_outline</i>
-                        </span>
-                      </div>
-                          <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="password-confirm...">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="material-icons">lock_outline</i>
+                            </span>
+                        </div>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
+                            required autocomplete="new-password" placeholder="password-confirm...">
                     </div>
-                  </span>
+                </span>
 
 
-                </div>
-                <div class="card-footer justify-content-center">
-                  <button type="submit" class="btn btn-rose btn-link btn-lg">
+            </div>
+            <div class="card-footer justify-content-center">
+                <button type="submit" class="btn btn-rose btn-link btn-lg">
                     {{ __('Register') }}
-                  </button>
-                </div>
-              </div>
-            </form>
-
+                </button>
+            </div>
+        </div>
+    </form>
 @endsection
